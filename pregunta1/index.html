@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tienda de Libros - Registro</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>TuTiendaDeLibrosOnline</h1>
+            <p class="subtitle">Encuentra los mejores libros</p>
+        </header>
+        
+        <div class="content">
+            <section class="form-section">
+                <h2>Crear Cuenta</h2>
+                <form id="registrationForm">
+                    <div class="form-group">
+                        <label for="nombre">NOMBRE</label>
+                        <input type="text" id="nombre" name="nombre" required>
+                        <div class="error" id="nombreError">favor de introducir un nombre valido</div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="apellidos">APELLIDOS</label>
+                        <input type="text" id="apellidos" name="apellidos" required>
+                        <div class="error" id="apellidosError">favor de introducir un texto valido</div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="telefono">TELEFONO</label>
+                        <input type="text" id="telefono" name="telefono" placeholder="123 45 67 89" required>
+                        <div class="error" id="telefonoError">Formato incorrecto. Usa: +x xx xxx xxxx</div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="password">Contraseña</label>
+                        <input type="password" id="password" name="password" required>
+                        <div class="error" id="passwordError">favor de introducir una contraseña valida de 8 caracteres</div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="intereses">areas de interes</label>
+                        <select id="intereses" name="intereses" required>
+                            <option value="">selecciona un area de interes</option>
+                            <option value="programacion">programacion</option>
+                            <option value="diseño">diseño</option>
+                            <option value="ciencias">ciencias</option>
+                        </select>
+                        <div class="error" id="interesesError">favor de insetar un area de interes</div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="fechaNacimiento">Fecha de nacimiento</label>
+                        <input type="date" id="fechaNacimiento" name="fechaNacimiento" required>
+                        <div class="error" id="fechaError">favor de introducir una fecha valida</div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <div class="checkbox-group">
+                            <input type="checkbox" id="acepto" name="acepto" required>
+                            <label for="acepto">Acepto los términos de protección de datos</label>
+                        </div>
+                        <div class="error" id="aceptoError">Debes aceptar los términos para continuar</div>
+                    </div>
+                    
+                    <button type="submit" id="agregarBtn">Agregar Cuenta</button>
+                </form>
+                
+                <div class="success-message" id="successMessage">
+                    ¡Cuenta creada exitosamente!
+                </div>
+            </section>
+            
+            <section class="books-section">
+                <h2>seccion de libros</h2>
+                
+                <div class="book-list">
+                    <div class="book-item">
+                        <span class="book-title">la metamorfosis</span>
+                        <span class="book-price">250.00 $</span>
+                    </div>
+                    <div class="book-item">
+                        <span class="book-title">c++ problemas</span>
+                        <span class="book-price">400.00$</span>
+                    </div>
+                    <div class="book-item">
+                        <span class="book-title">bibliografica de kafka</span>
+                        <span class="book-price">600.00 $</span>
+                    </div>
+                    <div class="book-item">
+                        <span class="book-title">Introfuccion a JavaScript</span>
+                        <span class="book-price">300.00 $</span>
+                    </div>
+                    <div class="book-item">
+                        <span class="book-title">los Tres osos</span>
+                        <span class="book-price">19.95 $</span>
+                    </div>
+                    <div class="book-item">
+                        <span class="book-title">top goles de ronaldo</span>
+                        <span class="book-price">150.00 $</span>
+                    </div>
+                </div>
+                
+                <div class="calculation-form">
+                    <h3>Calcular IVA</h3>
+                    
+                    <div class="form-group">
+                        <label for="precioLibro">Precio del libro</label>
+                        <input type="text" id="precioLibro" name="precioLibro" placeholder="Ej: 25.50" required>
+                        <div class="error" id="precioError">Formato incorrecto. Usa números con hasta 2 decimales</div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="tipoIVA">Tipo de IVA</label>
+                        <select id="tipoIVA" name="tipoIVA" required>
+                            <option value="0.10" selected>Iva 10.0%</option>
+                            <option value="0.21">Iva 21.0%</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group result-group">
+                        <label for="resultado">Precio con IVA</label>
+                        <input type="text" id="resultado" name="resultado" readonly>
+                    </div>
+                    
+                    <button type="button" id="calcularBtn">Calcular</button>
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
