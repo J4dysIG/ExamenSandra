@@ -1,9 +1,8 @@
 document.addEventListener('DOMContentLoaded', function() {
-    // Elementos del formulario de registro
+    
     const registrationForm = document.getElementById('registrationForm');
     const successMessage = document.getElementById('successMessage');
     
-    // Elementos del cálculo de precio
     const calcularBtn = document.getElementById('calcularBtn');
     const precioLibroInput = document.getElementById('precioLibro');
     const tipoIVASelect = document.getElementById('tipoIVA');
@@ -46,7 +45,7 @@ document.addEventListener('DOMContentLoaded', function() {
             telefonoError.style.display = 'none';
         }
         
-        // Validar contraseña (mínimo 8 caracteres)
+        
         const password = document.getElementById('password');
         const passwordError = document.getElementById('passwordError');
         if (password.value.length < 8) {
@@ -66,7 +65,7 @@ document.addEventListener('DOMContentLoaded', function() {
             interesesError.style.display = 'none';
         }
         
-        // Validar fecha de nacimiento
+        
         const fechaNacimiento = document.getElementById('fechaNacimiento');
         const fechaError = document.getElementById('fechaError');
         if (fechaNacimiento.value === '') {
@@ -93,11 +92,11 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
     
-    // Función para calcular el precio con IVA
+    
     calcularBtn.addEventListener('click', function() {
         const precioError = document.getElementById('precioError');
         
-        // Validar formato del precio (números con hasta 2 decimales)
+        
         const precioRegex = /^\d+(\.\d{1,2})?$/;
         if (!precioRegex.test(precioLibroInput.value)) {
             precioError.style.display = 'block';
@@ -106,16 +105,16 @@ document.addEventListener('DOMContentLoaded', function() {
             precioError.style.display = 'none';
         }
         
-        // Calculamos el iva
+        
         const precio = parseFloat(precioLibroInput.value);
         const tipoIVA = parseFloat(tipoIVASelect.value);
         const precioConIVA = precio * (1 + tipoIVA);
         
-        // resultado con 2 decimales
+        
         resultadoInput.value = precioConIVA.toFixed(2) + ' $';
     });
     
-    // Formatear automáticamente el teléfono mientras se escribe
+    
     document.getElementById('telefono').addEventListener('input', function(e) {
         let value = e.target.value.replace(/\D/g, '');
         
@@ -139,4 +138,5 @@ document.addEventListener('DOMContentLoaded', function() {
             e.target.value = formattedValue;
         }
     });
+
 });
