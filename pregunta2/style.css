@@ -1,4 +1,4 @@
-/* Estilos generales */
+
 * {
     margin: 0;
     padding: 0;
@@ -12,7 +12,6 @@ body {
     line-height: 1.6;
 }
 
-/* Estilos para la primera parte */
 .container {
     max-width: 1200px;
     margin: 0 auto;
@@ -58,7 +57,6 @@ footer {
     color: white;
 }
 
-/* Estilos para el catálogo */
 .catalogo {
     background-color: white;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -147,4 +145,5 @@ footer {
 
 .enlace-catalogo:hover {
     background-color: #2980b9;
+
 }
